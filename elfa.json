@@ -1,0 +1,43 @@
+{
+  "customFunctions": [
+    {
+      "id": "ed8a83c8-cd4d-4a33-9d85-d69c7056f62c",
+      "fn_name": "get_smart_mentions",
+      "fn_description": "Get tweets by smart accounts with high engagement",
+      "args": [
+        {
+          "id": "44d6ac02-93fb-48f7-a085-30a6cf38c7c3",
+          "name": "limit",
+          "description": "Number of mentions to return (max 100)",
+          "type": "number"
+        },
+        {
+          "id": "5789def0-1234-5678-abcd-ef1234567890",
+          "name": "offset",
+          "description": "Offset for pagination (default: 0)",
+          "type": "number"
+        }
+      ],
+      "hint": "Returns tweets from smart accounts with 10+ smart engagements. Updates every 2 hours.",
+      "config": {
+        "method": "get",
+        "url": "https://api.elfa.ai/v1/mentions?limit={{limit}}&offset={{offset}}",
+        "headers": {
+          "x-elfa-api-key": "<YOUR_API_KEY>"
+        },
+        "payload": {},
+        "success_feedback": "Recent trending tweets response:\n\n{{#response.data}}\n{{account.username}}   {{mentionedAt}}\nhttps://x.com/{{originalUrl}}\n{{content}}\n---\n{{/response.data}}",
+        "error_feedback": "",
+        "headersString": "{\n  \"x-elfa-api-key\": \"<YOUR_API_KEY>\"\n}",
+        "payloadString": "{}",
+        "isMainLoop": true,
+        "isReaction": false
+      }
+    }
+  ],
+  "description": "Elfa API integration for smart mentions",
+  "functions": ["get_smart_mentions"],
+  "goal": "",
+  "locationIds": [],
+  "worldInfo": ""
+}
