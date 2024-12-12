@@ -1,18 +1,21 @@
 {
+  "cli": {
+    "required_env": ["ELFA_API_KEY"]
+  },
   "customFunctions": [
     {
-      "id": "ed8a83c8-cd4d-4a33-9d85-d69c7056f62c",
+      "id": "<UUID>",
       "fn_name": "get_smart_mentions",
       "fn_description": "Get tweets by smart accounts with high engagement",
       "args": [
         {
-          "id": "44d6ac02-93fb-48f7-a085-30a6cf38c7c3",
+          "id": "<UUID>",
           "name": "limit",
           "description": "Number of mentions to return (max 100)",
           "type": "number"
         },
         {
-          "id": "5789def0-1234-5678-abcd-ef1234567890",
+          "id": "<UUID>",
           "name": "offset",
           "description": "Offset for pagination (default: 0)",
           "type": "number"
@@ -23,12 +26,12 @@
         "method": "get",
         "url": "https://api.elfa.ai/v1/mentions?limit={{limit}}&offset={{offset}}",
         "headers": {
-          "x-elfa-api-key": "<YOUR_API_KEY>"
+          "x-elfa-api-key": "<ELFA_API_KEY>"
         },
         "payload": {},
         "success_feedback": "Recent trending tweets response:\n\n{{#response.data}}\n{{account.username}}   {{mentionedAt}}\nhttps://x.com/{{originalUrl}}\n{{content}}\n---\n{{/response.data}}",
         "error_feedback": "",
-        "headersString": "{\n  \"x-elfa-api-key\": \"<YOUR_API_KEY>\"\n}",
+        "headersString": "{\n  \"x-elfa-api-key\": \"<ELFA_API_KEY>\"\n}",
         "payloadString": "{}",
         "isMainLoop": true,
         "isReaction": false

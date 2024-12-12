@@ -1,0 +1,16 @@
+{
+  "name": "virtual-game-template",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "inquirer": "^12.2.0",
+    "uuid": "^11.0.3"
+  }
+}
